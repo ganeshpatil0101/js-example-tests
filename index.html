@@ -4,10 +4,26 @@
 <head>
 	<title>Parcel Sandbox</title>
 	<meta charset="UTF-8" />
+	<style src="style.css" type="text/css"> </style>
 </head>
 
 <body>
-	<div id="app"></div>
+	<h1>Js examples</h1>
+	<div id="app">
+		<section id="nav">
+			<h3 class="subtitle">Examples</h3>
+			<button type="button" id="promiseTest"> Promise Test</button>
+			<button type="button" id="fibo"> Fibonacci Series</button>
+		</section>
+		<section id="source" >
+			<h3 class="subtitle">Source Code </h3>
+			<pre><code id="sourceCode"></code></pre>
+		</section>
+		<section id="output" >
+			<h3 class="subtitle">Console Output </h3>
+			<div id="console"></div>
+		</section>
+	</div>
 
 	<script src="src/index.js">
 	</script>
