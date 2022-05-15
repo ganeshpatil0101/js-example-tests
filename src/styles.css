@@ -9,6 +9,12 @@ body {
   background-color: aliceblue;
   flex:1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#nav button{
+  padding: 5px;
+  margin: 5px;
 }
 #source{
   background-color: aquamarine;
