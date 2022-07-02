@@ -49,6 +49,24 @@ function loadArrSearchIndex() {
 }
 document.getElementById("arrSearchIndex").addEventListener("click", loadArrSearchIndex, false);
 
+function loadCustomMap() {
+    cleanUp();
+    import('./examples/array/CustomMap').then((res)=>{
+        res.InitFunction();
+        sourceCode.innerHTML = res.InitFunction.toString();
+    });
+}
+document.getElementById("customMap").addEventListener("click", loadCustomMap, false);
+
+function loadFlattenArray() {
+    cleanUp();
+    import('./examples/array/flattenArray').then((res)=>{
+        res.InitFunction();
+        sourceCode.innerHTML = res.InitFunction.toString();
+    });
+}
+document.getElementById("flattenArray").addEventListener("click", loadFlattenArray, false);
+
 function loadNumRangeRec() {
     cleanUp();
     import('./examples/array/rangeWithRecursive').then((res)=>{
