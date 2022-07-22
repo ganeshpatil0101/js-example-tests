@@ -1,0 +1,23 @@
+{
+    "floor":[
+        {"name": "ski googles", "qty": 5},
+        {"name": "ski boots", "qty": 2}
+    ],
+    "backroom":[
+        {"name": "ski googles", "qty": 5},
+        {"name": "ski pools", "qty": 2}
+    ],
+    "localStore":[
+        {"name": "ski googles", "qty": 5},
+        {"name": "ski hats", "qty": 15},
+        {"name": "ski boots", "qty": 2}
+    ],
+    "warehouse":[
+        {"name": "ski googles", "qty": 5},
+        {"name": "ski hats", "qty": 15},
+        {"name": "ski boots", "qty": 2},
+        {"name": "ski poles", "qty": 20},
+        {"name": "wax", "qty": 211},
+        {"name": "ski boots", "qty": 2}
+    ]
+}

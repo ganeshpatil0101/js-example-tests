@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Custom Event Dispatch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            function dispatch() {
+                console.log("Button called ");
+                div.dispatchEvent(cEvent);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="custom"> </div>
+
+        <button onClick="dispatch()">Dispatch</button>
+        <script>
+            // let cEvent = new Event('customEvent');
+            let cEvent = new CustomEvent('customEvent')
+            var div = document.getElementById("custom");
+            div.addEventListener("customEvent", (event) => {
+                console.log("Custom Event Called ", event);    
+            });
+        </script>
+    
+    </body>
+</html>
