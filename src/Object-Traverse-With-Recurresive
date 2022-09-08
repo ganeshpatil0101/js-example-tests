@@ -1,0 +1,18 @@
+function dig(obj, target) {
+console.log(obj, target);
+	if(obj[target]) {
+    	console.log("got value ", obj[target], target);
+    	return obj[target];
+	} else {
+		Object.keys(obj).forEach((index, key)=>{
+        	if(typeof obj[index] !== "object" && index == target ){
+            	return obj[index];
+			}else if(typeof obj[index] === "object"){
+            	console.log('in else', obj[index]);
+            	return dig(obj[index], target);
+			}
+		})
+	}
+    return obj[target];
+}
+console.log(dig({a:"test", b:{ 'c':"deeper"}}, "c"));
