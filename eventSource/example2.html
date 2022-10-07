@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Javascript Event Source Examples</title>
+	<meta charset="UTF-8" />
+	<meta name="google-site-verification" content="LtYYsU2h7izNCb2N2iyxwqnEDntcQLXhYZz7GZ6qnUM" />
+	<style src="style.css" type="text/css"> </style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1452TWBCT2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-1452TWBCT2');
+	</script>
+</head>
+
+<body>
+	<h1>Event Source Example 2</h1>
+	<div id="app">
+
+		<form id="realTimeForm">
+			<fieldset>
+				<legend> Process large dataset on server scenario </legend>	
+				<div>
+					<p> Below button will send api call send asynchronous call to server that start processing large dataset.
+						& API will return 200 status code immediately. Server will start processing large dataset. 
+						Rather than waiting for the status of processing i.e. completed or not, or creating pulling mechanism to check status is 
+						bad user experience. We can take advantage of Event Source Object where server can send notification to client once processing is completed.
+					</p>
+					<button type="button" id="showBtn" > SEND API CALL </button>
+				</div>
+				<br />
+				<div>
+					<fieldset>
+						<legend> Output </legend>
+						<div id="output">
+
+						</div>
+					</fieldset>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script src="./eventSourceExample2.js"></script>
+	
+</body>
+
+</html>

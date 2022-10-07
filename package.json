@@ -1,11 +1,11 @@
 {
   "name": "js-example-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "Javascript Interactive Examples",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html --no-minify"
+    "start": "parcel eventSource/example.html eventSource/example2.html index.html watch",
+    "build": "parcel build index.html eventSource/example.html --no-minify"
   },
   "dependencies": {
     "parcel-bundler": "^1.6.1"
@@ -17,5 +17,10 @@
   "resolutions": {
     "@babel/preset-env": "7.13.8"
   },
-  "keywords": []
+  "keywords": [
+    "Javascript",
+    "HTML",
+    "Examples",
+    "Script"
+  ]
 }

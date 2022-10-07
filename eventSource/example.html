@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Javascript Event Source Examples</title>
+	<meta charset="UTF-8" />
+	<meta name="google-site-verification" content="LtYYsU2h7izNCb2N2iyxwqnEDntcQLXhYZz7GZ6qnUM" />
+	<style src="style.css" type="text/css"> </style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1452TWBCT2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-1452TWBCT2');
+	</script>
+</head>
+
+<body>
+	<h1>Event Source Example</h1>
+	<div id="app">
+		<form id="realTimeForm">
+			<fieldset>
+				<legend> Real Time By City </legend>	
+				<div>
+					<label for="city" > Select City </label>
+					<select name="city" id="city" required >
+						<option value="Asia/Calcutta" selected>Asia/Calcutta</option>
+						<option value="America/Montreal">America/Montreal</option>
+						<option value="Africa/Accra">Africa/Accra</option>
+						<option value="America/Los_Angeles">America/Los_Angeles</option>
+						<option value="America/New_York">America/New_York</option>
+						<option value="Asia/Dubai">Asia/Dubai</option>
+						<option value="Asia/Tokyo">Asia/Tokyo</option>
+						<option value="Pacific/Fiji">Pacific/Fiji</option>
+						<option value="Indian/Maldives">Indian/Maldives</option>
+						<option value="Europe/London">Europe/London</option>
+					</select>
+					<br /><br/>
+					<label for="seconds" > Update Time (In Seconds) </label>
+					<input type="number" placeholder="Enter Seconds" id="seconds" value="5" required />
+					<br/><br/>
+					<button type="submit" id="showBtn" > Show </button>
+					<button type="button" id="close" > STOP </button>
+				</div>
+				<br />
+				<div>
+					<fieldset>
+						<legend id="selected_city"> Current Time </legend>
+						<div> <span id="time" > DD/MM/YYYY HH:MM:SS </span> </div>
+					</fieldset>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<script src="./eventSourceExample.js"></script>
+	
+</body>
+
+</html>
