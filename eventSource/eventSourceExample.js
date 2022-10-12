@@ -4,9 +4,8 @@ const form = document.getElementById('realTimeForm');
 const secondsToUpdate = document.getElementById('seconds');
 const close = document.getElementById('close');
 const time = document.getElementById('time');
-
-// const URL = '//localhost:3000/event-stream';
-const URL = 'https://righteous-quiet-sphynx.glitch.me/event-stream';
+// https://glitch.com/edit/#!/righteous-quiet-sphynx API SERVER
+const URL = (location.host === 'localhost:1234') ? '//localhost:3000/event-stream' : 'https://righteous-quiet-sphynx.glitch.me/event-stream';
 let selectedCityName = 'Asia/Calcutta';
 let selectedCityValue = 'Asia/Calcutta';
 
@@ -20,16 +19,18 @@ function showBtnClick(event) {
     // Close connect if already present
     closeConnection();
 
+    document.body.style.cursor = 'wait';
     eventStream = new EventSource(`${URL}?city=${selectedCityValue}&sec=${secondsToUpdate.value}`);
     eventStream.addEventListener('open', () => {
+        document.body.style.cursor = 'default';
         console.log("Connected and subscribed to channel ");
     });
-    eventStream.addEventListener('message', (event) => {
+    eventStream.addEventListener('UPDATE', (event) => {
         const data = JSON.parse(event.data);
         console.log(' eventStream data', data);
         time.innerHTML = data.dateTime;
     });
-    eventStream.addEventListener('close', (err) => {
+    eventStream.addEventListener('error', (err) => {
         console.error("EventSource failed:", err);
     });
     event.preventDefault();

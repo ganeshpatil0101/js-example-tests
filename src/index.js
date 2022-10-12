@@ -120,3 +120,9 @@ function loadDebouning() {
     });
 }
 document.getElementById("debouncing").addEventListener("click", loadDebouning, false);
+
+function loadEventSource() {
+    cleanUp();
+    window.location = 'eventsource/example.html';
+}
+document.getElementById("eventSource").addEventListener("click", loadEventSource, false);
