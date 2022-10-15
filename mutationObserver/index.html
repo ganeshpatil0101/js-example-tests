@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mutation Observer Example</title>
+	<meta charset="UTF-8" />
+    <meta description="Mutation Observer Example" />
+    <meta keywords="Mutation" />
+	<meta name="google-site-verification" content="LtYYsU2h7izNCb2N2iyxwqnEDntcQLXhYZz7GZ6qnUM" />
+	<style src="style.css" type="text/css"> </style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1452TWBCT2"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-1452TWBCT2');
+	</script>
+    <style type="text/css">
+        #app{
+            display: flex;
+            flex-direction: row;
+        }
+        #control-area {
+            background-color: aliceblue;
+            flex:1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        #playground-area{
+            flex:5;
+        }
+        .output {
+            background-color: antiquewhite;
+        } 
+    </style>
+</head>
+
+<body>
+	<h1>Mutation Observer Example</h1>
+	<div id="app">
+            <section id="control-area">
+                <fieldset>
+                    <legend> Actions </legend>	
+                    <button id="changeAttribute"> Change Style Attributes </button> <br /> <br />
+                    <button id="changeCustomAttribute"> Change Custom Attributes </button> <br /> <br />
+                    <button id="changeDom" > Add DOM Element </button> <br /> <br />
+                    <button id="removeDom" > Remove DOM Element </button> <br /> <br />
+                </fieldset>
+                
+            </section>
+            <section id="playground-area" >
+                <fieldset class="output" >
+                    <legend> Output </legend>
+                    <div id="playarea" custom-data="custom-data-0"> 
+                        <h3> Sample Text </h3>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend> Logs </legend>	
+                    <div id="logs"> </div>
+                </fieldset>
+        </section>
+	</div>
+	<script src="./index.js"></script>
+	
+</body>
+
+</html>

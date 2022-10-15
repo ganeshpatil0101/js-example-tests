@@ -4,8 +4,8 @@
   "description": "Javascript Interactive Examples",
   "main": "index.html",
   "scripts": {
-    "start": "parcel eventSource/example.html eventSource/example2.html index.html watch",
-    "build": "parcel build index.html eventSource/example.html eventSource/example2.html --no-minify"
+    "start": "parcel eventSource/example.html eventSource/example2.html index.html mutationObserver/index.html watch",
+    "build": "parcel build index.html eventSource/example.html eventSource/example2.html mutationObserver/index.html --no-minify"
   },
   "dependencies": {
     "parcel-bundler": "^1.6.1"
