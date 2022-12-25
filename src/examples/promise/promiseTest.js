@@ -1,4 +1,4 @@
-export function PromiseTest() {
+function PromiseTest() {
   let p1 = new Promise((res, rej) => {
     setTimeout(() => {
       res("Data");
@@ -15,33 +15,46 @@ export function PromiseTest() {
     .then((d) => console.log(d));
 }
 
-function PromiseTest1() {
-  return new Promise((res, rej) => {
-    res("Test");
+// File 1 - Implementation 
+let cachedData = {};
+function getUserAccess() {
+  if(Object.keys(cachedData).length > 0) {
+    return Promise.resolve(cachedData);
+  }
+  return new Promise((resolve, rej) => {
+    const mockedResponse = {entitlments:[{original:1}]}; 
+    cachedData = {...mockedResponse};
+    resolve(mockedResponse);
   });
 }
 
 //File 1
-PromiseTest1().then( (response) => {
-  console.log(" then 1 => ", response);
-  return `${response}-Updated`;
+getUserAccess().then( (response) => {
+  console.log(" File 1 -> then 1 => ", response);
+  response['parsedData'] = {'original':3}
+  return response;
 }).then((res) => {
-  console.log(' then 2 => ', res);
+  console.log(' File 2 -> then 2 => ', res);
 });
 
 //File 2
-PromiseTest1().then((response)=>{
-  console.log(" then 3 => ", response);
+getUserAccess().then((response)=>{
+  console.log(" File 2 -> then 1 => ", response);
   return response;
 }).then((res) => {
-  console.log(" then 3.1 => ", res);
-  return `${res}-3.1-updated`;
+  console.log("  File 2 -> then 2 => ", res);
+  res['parsedData'] = { original:1 };
+  return res;
 }).then((res) => {
-  console.log(" then 3.2 => ", res);
-  return `${res}-3.2-updated`;
+  console.log("  File 2 -> then 3 => ", res);
+  res['parsedData'] = {original:2};
+  return res;
+}).then((res) => {
+  console.log("  File 2 -> then 4 => ", res);
 });
 
+
 //File 3
-PromiseTest1().then((response)=>{
-  console.log(" then 4 => ", response);
+getUserAccess().then((response)=>{
+  console.log(" File 3 ->  then 1 => ", response);
 });
